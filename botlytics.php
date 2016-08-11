@@ -7,19 +7,19 @@
       $conversation_identifier = (string)$conversation_identifier; 
 
       $data = array("message"=>array("text" => $text, "kind" => $kind));
-        echo ($data);
-        if (strlen($conversation_identifier) > 0){
-            $data["message"]["conversation_identifier"] = $conversation_identifier;
-        }
-        if (strlen($sender_identifier) > 0){
-            $data["message"]["sender_identifier"] = $sender_identifier;
-        }
-        if (strlen($platform) > 0){
-            $data["message"]["platform"] = $platform;
-        }
-        if (strlen($payload) > 0){
-            $data["message"]["payload"] = $payload;
-        }
+      echo ($data);
+      if (strlen($conversation_identifier) > 0){
+         $data["message"]["conversation_identifier"] = $conversation_identifier;
+      }
+      if (strlen($sender_identifier) > 0){
+         $data["message"]["sender_identifier"] = $sender_identifier;
+      }
+      if (strlen($platform) > 0){
+         $data["message"]["platform"] = $platform;
+      }
+      if (strlen($payload) > 0){
+         $data["message"]["payload"] = $payload;
+      }
       $data_string = json_encode($data);
       $ch = curl_init('www.botlytics.co/api/v1/messages?token=' . $API_KEY);                                                                      
       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
