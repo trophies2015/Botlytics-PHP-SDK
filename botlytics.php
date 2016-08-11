@@ -7,7 +7,7 @@
       $conversation_identifier = (string)$conversation_identifier; 
 
       $data = array("message"=>array("text" => $text, "kind" => $kind));
-      echo ($data);
+      //echo ($data);
       if (strlen($conversation_identifier) > 0){
          $data["message"]["conversation_identifier"] = $conversation_identifier;
       }
